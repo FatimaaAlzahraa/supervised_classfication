@@ -75,36 +75,21 @@ docker run -p 8888:8888 titanic-ml
 jupyter notebook classification_supervised.ipynb
 ```
 
-### Using Docker
+### 🐳 Using Docker
+---
+
+
+You can pull and run the project directly from Docker Hub:
+
 ```bash
-# Build and run as above, then access through browser
-# The token will be displayed in the terminal output
-```
+# Pull the image
+docker pull fatmaalzahra/supervised_classification:latest
 
-### Command Line Execution
-```bash
-python train_model.py
-```
+# Run the container (JupyterLab will start on port 8888)
+docker run -p 8888:8888 fatmaalzahra/supervised_classification:latest
 
-## 📁 Directory Structure
 
-```
-titanic-survival-prediction/
-├── data/
-│   ├── raw/
-│   │   └── train.csv
-│   └── processed/
-├── models/
-│   └── best_model.pkl
-├── notebooks/
-│   └── classification_supervised.ipynb
-├── src/
-│   ├── data_preprocessing.py
-│   ├── model_training.py
-│   └── evaluation.py
-├── Dockerfile
-├── requirements.txt
-└── README.md
+
 ```
 
 ## 🛠 Technologies Used
