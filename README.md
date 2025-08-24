@@ -19,6 +19,8 @@ The Titanic dataset is a classic introductory dataset for machine learning, prov
 ### Model Training
 * Multiple classification algorithms tested:
   * Logistic Regression
+  * Decision tree
+  * AdaBoost
   * Random Forest
   * Gradient Boosting
   * Support Vector Machines
@@ -37,60 +39,37 @@ The Titanic dataset is a classic introductory dataset for machine learning, prov
 * Python 3.8+
 * Docker (optional)
 
-### Local Installation
 
-1. Clone the repository:
+## How to Run
+
+### Prerequisites
+Install the required libraries using pip:
 ```bash
-git clone https://github.com/your-username/titanic-survival-prediction.git
-cd titanic-survival-prediction
+pip install numpy pandas matplotlib seaborn ipywidgets scikit-learn
 ```
 
-2. Create a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+## Run with Docker
 
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-### Docker Installation
-
-1. Build the Docker image:
-```bash
-docker build -t titanic-ml .
-```
-
-2. Run the container:
-```bash
-docker run -p 8888:8888 titanic-ml
-```
-
-## 🏃‍♂️ How to Run
-
-### Using Jupyter Notebook
-```bash
-jupyter notebook classification_supervised.ipynb
-```
-
-### 🐳 Using Docker
----
+You can run this project in an isolated, reproducible environment using Docker.
+A prebuilt image is available on Docker Hub:  
+**Image:** [`fatmaalzahra/supervised_classification`](https://hub.docker.com/repository/docker/fatmaalzahra/supervised_classification)
 
 
-You can pull and run the project directly from Docker Hub:
 
 ```bash
-# Pull the image
-docker pull fatmaalzahra/supervised_classification:latest
+# 1) Pull the image
+docker pull fatmaalzahra/supervised_classification
 
-# Run the container (JupyterLab will start on port 8888)
-docker run -p 8888:8888 fatmaalzahra/supervised_classification:latest
+# 2) Run Jupyter (container exposes port 8888)
+docker run --rm -p 8888:8888 fatmaalzahra/supervised_classification
+
+### Execution Steps
+1. **Clone the repository** to your local machine
+2. **Open the Jupyter notebook**: `Agricultural Crop Recommendation System using Clustering and Classification.ipynb`
+3. **Run all cells sequentially** to execute the complete analysis
+4. **Follow the step-by-step implementation** provided in the notebook for detailed understanding
 
 
-
-```
 
 ## 🛠 Technologies Used
 
@@ -101,13 +80,4 @@ docker run -p 8888:8888 fatmaalzahra/supervised_classification:latest
 * **Jupyter**: Interactive computing environment
 * **Docker**: Containerization
 
-## 📊 Results
 
-The best performing model achieved **82.3% accuracy** on the test set with the following metrics:
-
-| Metric | Score |
-|--------|-------|
-| Accuracy | 82.3% |
-| Precision | 80.1% |
-| Recall | 83.5% |
-| F1-Score | 81.7% |
